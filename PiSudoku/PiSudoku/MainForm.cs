@@ -4,6 +4,11 @@ namespace PiSudoku
 {
     public partial class MainForm : Form
     {
+        private Board _board = new Board();
+
+
+
+
         public MainForm()
         {
             InitializeComponent();
@@ -57,6 +62,11 @@ namespace PiSudoku
                 var color = Constants.ShapeColors.First(e => e.Item1 == shapeNumber).Item2;
                 tb.BackColor = color;
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var value = _board.Row(1);
         }
     }
 }

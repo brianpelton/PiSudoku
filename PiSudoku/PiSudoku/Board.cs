@@ -7,6 +7,10 @@
         public Board()
         {
             _data = new int[Constants.BoardSize];
+            for (int i=0; i < _data.Length; i++)
+                {
+                    _data[i] = i;
+                }
         }
 
         /// <summary>
@@ -19,7 +23,7 @@
         /// </summary>
         public int[] Row(int rowNumber)
         {
-            return null;
+            return _data[(rowNumber * 12)..((rowNumber * 12) + 12)];
         }
 
         /// <summary>

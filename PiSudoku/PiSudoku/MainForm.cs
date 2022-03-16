@@ -22,46 +22,55 @@ namespace PiSudoku
 
         private void CreateTextBoxes()
         {
-            var lastTexbox = textBox1;
-            textBox1.Name = "Square1";
-            textBox1.Tag = 0;
+            var firstControl = buttonBox1;
+            var lastControl = buttonBox1;
 
             for (int i = 1; i < Constants.BoardSize; i++)
             {
-                var tb = new TextBox
+                var tb = new ButtonBox //TextBox
                 {
                     Name = $"Square{i}",
                     Parent = grpBoard,
-                    Font = lastTexbox.Font,
-                    Width = lastTexbox.Width,
-                    Height = lastTexbox.Height,
-                    Left = lastTexbox.Left + lastTexbox.Width + textBox1.Left,
-                    Top = lastTexbox.Top,
-                    Tag = i,
+                    Font = lastControl.Font,
+                    Width = lastControl.Width,
+                    Height = lastControl.Height,
+                    Left = lastControl.Left + lastControl.Width + 5,
+                    Top = lastControl.Top,
+                    Tag = $"Index{i}",
                 };
 
                 if (i % Math.Sqrt(Constants.BoardSize) == 0)
                 {
-                    tb.Top += tb.Height + 5;
-                    tb.Left = textBox1.Left;
+                    tb.Top += firstControl.Height + 5;
+                    tb.Left = firstControl.Left;
                 }
 
-                lastTexbox = tb;
+                lastControl = tb;
             }
 
-            grpBoard.Width = lastTexbox.Left + lastTexbox.Width + textBox1.Left;
-            grpBoard.Height = lastTexbox.Top + lastTexbox.Height + textBox1.Top;
+            grpBoard.Width = lastControl.Left + lastControl.Width + 5;
+            grpBoard.Height = lastControl.Top + lastControl.Height + 5;
         }
 
         private void ColorTextBoxes()
         {
-            for (int i = 0; i < Constants.BoardSize; i++)
+            //    for (int i = 0; i < Constants.BoardSize; i++)
+            //    {
+            //        ButtonBox control = grpBoard.Controls.OfType<ButtonBox>().FirstOrDefault(e => (string)e.Tag == $"Index{i}");
+            //        var shapeNumber = Functions.FindShapeNumberByIndex(i);
+            //        var color = Constants.ShapeColors.First(e => e.Item1 == shapeNumber).Item2;
+            //        control.BackColor = color;
+            //    }
+
+
+            for (int i = 0; i < grpBoard.Controls.Count; i++)
             {
-                TextBox tb = grpBoard.Controls.OfType<TextBox>().FirstOrDefault(e => (int)e.Tag == i);
+                var control = grpBoard.Controls[i] as ButtonBox;
                 var shapeNumber = Functions.FindShapeNumberByIndex(i);
                 var color = Constants.ShapeColors.First(e => e.Item1 == shapeNumber).Item2;
-                tb.BackColor = color;
+                control.BackColor = color;
             }
+
         }
 
         private void button1_Click(object sender, EventArgs e)

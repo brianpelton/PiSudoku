@@ -29,52 +29,37 @@
         private void InitializeComponent()
         {
             this.grpBoard = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.buttonBox1 = new PiSudoku.ButtonBox();
             this.grpBoard.SuspendLayout();
             this.SuspendLayout();
             // 
             // grpBoard
             // 
-            this.grpBoard.Controls.Add(this.textBox1);
+            this.grpBoard.Controls.Add(this.buttonBox1);
             this.grpBoard.Location = new System.Drawing.Point(12, 12);
             this.grpBoard.Name = "grpBoard";
-            this.grpBoard.Size = new System.Drawing.Size(526, 333);
+            this.grpBoard.Size = new System.Drawing.Size(173, 149);
             this.grpBoard.TabIndex = 0;
             this.grpBoard.TabStop = false;
             this.grpBoard.Text = "Board";
             // 
-            // textBox1
+            // buttonBox1
             // 
-            this.textBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.textBox1.Location = new System.Drawing.Point(6, 22);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(26, 26);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(582, 332);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.buttonBox1.Location = new System.Drawing.Point(6, 22);
+            this.buttonBox1.Name = "buttonBox1";
+            this.buttonBox1.Size = new System.Drawing.Size(138, 104);
+            this.buttonBox1.TabIndex = 2;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1215, 654);
             this.Controls.Add(this.grpBoard);
             this.Name = "MainForm";
             this.Text = "Pi Sudoku";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.grpBoard.ResumeLayout(false);
-            this.grpBoard.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -82,7 +67,6 @@
         #endregion
 
         private GroupBox grpBoard;
-        private TextBox textBox1;
-        private Button button1;
+        private ButtonBox buttonBox1;
     }
 }

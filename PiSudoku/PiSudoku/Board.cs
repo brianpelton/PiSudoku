@@ -31,7 +31,12 @@
         /// </summary>
         public int[] Column(int columnNumber)
         {
-            return null;
+            var returnData = new int[12];
+            for (int i=0; i < returnData.Length; i++)
+            {
+                returnData[i] = (i * 12) + columnNumber;
+            }
+            return returnData;
         }
 
         /// <summary>

@@ -66,7 +66,7 @@ namespace PiSudoku
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var value = _board.Row(1);
+            var value = _board.Column(1);
         }
     }
 }

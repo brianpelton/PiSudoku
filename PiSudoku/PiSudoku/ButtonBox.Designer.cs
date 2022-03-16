@@ -236,6 +236,6 @@
         private Button button10;
         private Button button11;
         private Button button12;
-        private Label lblValue;
+        internal Label lblValue;
     }
 }

@@ -15,6 +15,7 @@ namespace PiSudoku
         {
             CreateTextBoxes();
             ColorTextBoxes();
+            UpdateValues();
         }
 
         private void CreateTextBoxes()
@@ -51,15 +52,6 @@ namespace PiSudoku
 
         private void ColorTextBoxes()
         {
-            //    for (int i = 0; i < Constants.BoardSize; i++)
-            //    {
-            //        ButtonBox control = grpBoard.Controls.OfType<ButtonBox>().FirstOrDefault(e => (string)e.Tag == $"Index{i}");
-            //        var shapeNumber = Functions.FindShapeNumberByIndex(i);
-            //        var color = Constants.ShapeColors.First(e => e.Item1 == shapeNumber).Item2;
-            //        control.BackColor = color;
-            //    }
-
-
             for (int i = 0; i < grpBoard.Controls.Count; i++)
             {
                 var control = grpBoard.Controls[i] as ButtonBox;
@@ -67,7 +59,23 @@ namespace PiSudoku
                 var color = Constants.ShapeColors.First(e => e.Item1 == shapeNumber).Item2;
                 control.BackColor = color;
             }
+        }
 
+        private void UpdateValues()
+        {
+            for (int i = 0; i < 144; i++)
+            {
+                var control = grpBoard.Controls[i] as ButtonBox;
+                var value = _board.Data(i);
+
+                if (value == 0)
+                    continue;
+
+                control.PossibleValues = new List<int>();
+                control.PossibleValues.Add(value);
+                control.lblValue.Visible = true;
+                control.lblValue.Text = value.ToString();
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -77,7 +85,7 @@ namespace PiSudoku
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-            e.Cancel = true;
+            //e.Cancel = true;
         }
     }
 }

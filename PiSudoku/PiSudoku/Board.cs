@@ -9,7 +9,7 @@
             _data = new int[Constants.BoardSize];
             for (int i=0; i < _data.Length; i++)
                 {
-                    _data[i] = i;
+                    _data[i] = i + 2;
                 }
         }
 
@@ -24,6 +24,7 @@
         public int[] Row(int rowNumber)
         {
             return _data[(rowNumber * 12)..((rowNumber * 12) + 12)];
+            
         }
 
         /// <summary>
@@ -31,12 +32,12 @@
         /// </summary>
         public int[] Column(int columnNumber)
         {
-            var returnData = new int[12];
-            for (int i=0; i < returnData.Length; i++)
+            var values = new int[12];
+            for (int i=0; i < values.Length; i++)
             {
-                returnData[i] = (i * 12) + columnNumber;
+                values[i] = (i * 12) + columnNumber;
             }
-            return returnData;
+            return GetValuesFromIndexes(values);
         }
 
         /// <summary>
@@ -44,7 +45,18 @@
         /// </summary>
         public int[] Shape(int shapeNumber)
         {
-            return null;
+            var values = Functions.GetShapeIndexes(shapeNumber);
+            return GetValuesFromIndexes(values);
+        }
+
+        public int[] GetValuesFromIndexes(int[] indexes)
+        {
+            var returnData = new int[12];
+            for (int i = 0; i < indexes.Length; i++)
+            {
+                returnData[i] = _data[indexes[i]];
+            }
+            return returnData;
         }
     }
 }

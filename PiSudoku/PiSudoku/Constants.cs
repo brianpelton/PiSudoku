@@ -20,18 +20,18 @@
 
         public static List<(int, Color)> ShapeColors => new List<(int, Color)>
         {
-            (1, Color.SandyBrown),
-            (2, Color.Black),
-            (3, Color.Blue),
-            (4, Color.Gray),
-            (5, Color.Purple),
-            (6, Color.Pink),
-            (7, Color.Turquoise),
-            (8, Color.Yellow),
-            (9, Color.Beige),
-            (10, Color.DarkKhaki),
-            (11, Color.SaddleBrown),
-            (12, Color.Lime),
+            (0, Color.SandyBrown),
+            (1, Color.Black),
+            (2, Color.Blue),
+            (3, Color.Gray),
+            (4, Color.Purple),
+            (5, Color.Pink),
+            (6, Color.Turquoise),
+            (7, Color.Yellow),
+            (8, Color.Beige),
+            (9, Color.DarkKhaki),
+            (10, Color.SaddleBrown),
+            (11, Color.Lime),
         };
 
         public const int RowSize = 12;

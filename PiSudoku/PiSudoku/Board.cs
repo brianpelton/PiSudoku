@@ -80,20 +80,11 @@
                 (143,8),
             };
 
+            foreach(var knownValue in knownValues)
+            {
+                _data[knownValue.Item1] = knownValue.Item2;
 
-
-
-
-            //real data
-            _data[0] = 3;
-            (4,1)
-
-
-
-
-           
-
-
+            }
         }
 
         /// <summary>

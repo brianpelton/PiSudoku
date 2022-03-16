@@ -2,6 +2,8 @@
 {
     public static class Constants
     {
+        public static int[] PossibleValues = new int[] { 3, 1, 4, 1, 5, 9, 2, 6, 5, 3, 5, 8};
+
         public static class Shapes
         {
             public static readonly int[] Shape1Indexes = new[] { 0, 1, 2, 12, 13, 14, 24, 25, 36, 37, 48, 49 };
@@ -21,8 +23,8 @@
         public static List<(int, Color)> ShapeColors => new List<(int, Color)>
         {
             (0, Color.SandyBrown),
-            (1, Color.Black),
-            (2, Color.Blue),
+            (1, Color.OliveDrab),
+            (2, Color.Violet),
             (3, Color.Gray),
             (4, Color.Purple),
             (5, Color.Pink),

@@ -40,6 +40,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.lblValue = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
@@ -186,10 +187,22 @@
             this.button12.Text = "8";
             this.button12.UseVisualStyleBackColor = true;
             // 
+            // lblValue
+            // 
+            this.lblValue.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.lblValue.Location = new System.Drawing.Point(3, 3);
+            this.lblValue.Name = "lblValue";
+            this.lblValue.Size = new System.Drawing.Size(130, 97);
+            this.lblValue.TabIndex = 12;
+            this.lblValue.Text = "label1";
+            this.lblValue.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lblValue.Visible = false;
+            // 
             // ButtonBox
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.lblValue);
             this.Controls.Add(this.button12);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -203,7 +216,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "ButtonBox";
-            this.Size = new System.Drawing.Size(138, 107);
+            this.Size = new System.Drawing.Size(149, 107);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +236,6 @@
         private Button button10;
         private Button button11;
         private Button button12;
+        private Label lblValue;
     }
 }

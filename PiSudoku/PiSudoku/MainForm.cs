@@ -6,9 +6,6 @@ namespace PiSudoku
     {
         private Board _board = new Board();
 
-
-
-
         public MainForm()
         {
             InitializeComponent();
@@ -76,6 +73,11 @@ namespace PiSudoku
         private void button1_Click(object sender, EventArgs e)
         {
             var value = _board.Column(1);
+        }
+
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            e.Cancel = true;
         }
     }
 }

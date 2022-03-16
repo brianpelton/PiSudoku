@@ -9,6 +9,9 @@
             if (DesignMode)
                 return;
 
+            PossibleValues = new List<int>();
+            PossibleValues.AddRange(Constants.PossibleValues);
+
             Load += ButtonBox_Load;
         }
 
@@ -26,6 +29,12 @@
             button10.Click += ButtonClick;
             button11.Click += ButtonClick;
             button12.Click += ButtonClick;
+            lblValue.Click += LabelClick;
+        }
+
+        private void LabelClick(object? sender, EventArgs e)
+        {
+            lblValue.Visible = false;
         }
 
         private void ButtonClick(object? sender, EventArgs e)
@@ -36,13 +45,25 @@
 
             if (isEnabled)
             {
+                var value = Convert.ToInt32(button.Text);
+                PossibleValues.Remove(value);
+
                 button.Text = string.Empty;
                 button.FlatStyle = FlatStyle.Flat;
             }
             else
             {
+                var value = Convert.ToInt32(button.Tag);
+                PossibleValues.Add(value);
+
                 button.Text = button.Tag.ToString();
                 button.FlatStyle = FlatStyle.Standard;
+            }
+
+            if (PossibleValues.Count == 1)
+            {
+                lblValue.Text = PossibleValues.FirstOrDefault().ToString();
+                lblValue.Visible = true;
             }
         }
 
@@ -58,14 +79,6 @@
             }
         }
 
-        public int[] PossibleValues { get; set; }
-
-        public int Value { get; set; }
-
-        public void Update()
-        {
-
-
-        }
+        public List<int> PossibleValues { get; set; }
     }
 }

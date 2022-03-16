@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.grpBoard = new System.Windows.Forms.GroupBox();
             this.buttonBox1 = new PiSudoku.ButtonBox();
             this.grpBoard.SuspendLayout();
@@ -47,6 +48,7 @@
             // 
             this.buttonBox1.Location = new System.Drawing.Point(6, 22);
             this.buttonBox1.Name = "buttonBox1";
+            this.buttonBox1.PossibleValues = ((System.Collections.Generic.List<int>)(resources.GetObject("buttonBox1.PossibleValues")));
             this.buttonBox1.Size = new System.Drawing.Size(138, 104);
             this.buttonBox1.TabIndex = 2;
             // 
@@ -58,6 +60,7 @@
             this.Controls.Add(this.grpBoard);
             this.Name = "MainForm";
             this.Text = "Pi Sudoku";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.grpBoard.ResumeLayout(false);
             this.ResumeLayout(false);

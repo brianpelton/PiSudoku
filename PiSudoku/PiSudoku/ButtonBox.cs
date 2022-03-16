@@ -9,6 +9,11 @@
             if (DesignMode)
                 return;
 
+            Load += ButtonBox_Load;
+        }
+
+        private void ButtonBox_Load(object? sender, EventArgs e)
+        {
             button1.Click += ButtonClick;
             button2.Click += ButtonClick;
             button3.Click += ButtonClick;
@@ -27,8 +32,6 @@
         {
             var button = (Button)sender;
 
-            var currentColor = button.BackColor;
-
             bool isEnabled = !string.IsNullOrEmpty(button.Text);
 
             if (isEnabled)
@@ -41,9 +44,6 @@
                 button.Text = button.Tag.ToString();
                 button.FlatStyle = FlatStyle.Standard;
             }
-
-            //var newColor = Color.FromArgb(currentColor.A == 255 ? 0 : 255, currentColor.R, currentColor.G, currentColor.B);
-            //button.BackColor = newColor;
         }
 
         public Color BackColor

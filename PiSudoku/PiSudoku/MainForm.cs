@@ -16,19 +16,20 @@ namespace PiSudoku
         {
             var lastTexbox = textBox1;
 
-            for (int i = 1; i < 144; i++)
+            for (int i = 1; i < Constants.BoardSize; i++)
             {
-                var tb = new TextBox();
+                var tb = new TextBox
+                {
+                    Name = $"Square{i}",
+                    Parent = grpBoard,
+                    Font = lastTexbox.Font,
+                    Width = lastTexbox.Width,
+                    Height = lastTexbox.Height,
+                    Left = lastTexbox.Left + lastTexbox.Width + textBox1.Left,
+                    Top = lastTexbox.Top
+                };
 
-                tb.Name = $"Square{i}";
-                tb.Parent = grpBoard;
-                tb.Font = lastTexbox.Font;
-                tb.Width = lastTexbox.Width;
-                tb.Height = lastTexbox.Height;
-                tb.Left = lastTexbox.Left + tb.Width + 5;
-                tb.Top = lastTexbox.Top;
-
-                if (i % 12 == 0)
+                if (i % Math.Sqrt(Constants.BoardSize) == 0)
                 {
                     tb.Top += tb.Height + 5;
                     tb.Left = textBox1.Left;
@@ -37,8 +38,8 @@ namespace PiSudoku
                 lastTexbox = tb;
             }
 
-            grpBoard.Width = lastTexbox.Left + lastTexbox.Width + 5;
-            grpBoard.Height = lastTexbox.Top + lastTexbox.Height + 5;
+            grpBoard.Width = lastTexbox.Left + lastTexbox.Width + textBox1.Left;
+            grpBoard.Height = lastTexbox.Top + lastTexbox.Height + textBox1.Top;
         }
     }
 }

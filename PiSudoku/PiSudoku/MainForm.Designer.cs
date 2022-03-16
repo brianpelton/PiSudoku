@@ -59,7 +59,7 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.grpBoard);
             this.Name = "MainForm";
-            this.Text = "Form1";
+            this.Text = "Pi Sudoku";
             this.Load += new System.EventHandler(this.MainForm_Load);
             this.grpBoard.ResumeLayout(false);
             this.grpBoard.PerformLayout();

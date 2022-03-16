@@ -18,6 +18,22 @@
             public static readonly int[] Shape12Indexes = new[] { 117, 118, 119, 129, 130, 131, 138, 139, 140, 141, 142, 143 };
         }
 
+        public static List<(int, Color)> ShapeColors => new List<(int, Color)>
+        {
+            (1, Color.SandyBrown),
+            (2, Color.Black),
+            (3, Color.Blue),
+            (4, Color.Gray),
+            (5, Color.Purple),
+            (6, Color.Pink),
+            (7, Color.Turquoise),
+            (8, Color.Yellow),
+            (9, Color.Beige),
+            (10, Color.DarkKhaki),
+            (11, Color.SaddleBrown),
+            (12, Color.Lime),
+        };
+
         public const int RowSize = 12;
         public const int ColumnSize = 12;
         public static int BoardSize => RowSize * ColumnSize;

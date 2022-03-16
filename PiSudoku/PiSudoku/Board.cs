@@ -37,38 +37,5 @@
         {
             return null;
         }
-
-        public int[] GetShapeIndexes(int shapeNumber)
-        {
-            switch (shapeNumber)
-            {
-                case 1:
-                    return Constants.Shapes.Shape1Indexes;
-                case 2:
-                    return Constants.Shapes.Shape2Indexes;
-                case 3:
-                    return Constants.Shapes.Shape3Indexes;
-                case 4:
-                    return Constants.Shapes.Shape4Indexes;
-                case 5:
-                    return Constants.Shapes.Shape5Indexes;
-                case 6:
-                    return Constants.Shapes.Shape6Indexes;
-                case 7:
-                    return Constants.Shapes.Shape7Indexes;
-                case 8:
-                    return Constants.Shapes.Shape8Indexes;
-                case 9:
-                    return Constants.Shapes.Shape9Indexes;
-                case 10:
-                    return Constants.Shapes.Shape10Indexes;
-                case 11:
-                    return Constants.Shapes.Shape11Indexes;
-                case 12:
-                    return Constants.Shapes.Shape12Indexes;
-            }
-
-            return null;
-        }
     }
 }

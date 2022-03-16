@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PiSudoku", "PiSudoku\PiSudoku.csproj", "{C6A4BC14-8A0F-40D1-AFFF-ABE0417E0712}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C6A4BC14-8A0F-40D1-AFFF-ABE0417E0712}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A4BC14-8A0F-40D1-AFFF-ABE0417E0712}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A4BC14-8A0F-40D1-AFFF-ABE0417E0712}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A4BC14-8A0F-40D1-AFFF-ABE0417E0712}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5545CE2C-A492-4F67-AD51-FF763A5041B1}
+	EndGlobalSection
+EndGlobal
